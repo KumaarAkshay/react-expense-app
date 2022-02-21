@@ -1,17 +1,25 @@
 import Expense from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
-  const expenses = [
+  var expenses = [
     { title: "Bike Insurance", amount: 234.44, date: new Date(2022, 2, 12) },
     { title: "  Momos Shop", amount: 500, date: new Date(2022, 1, 12) },
     { title: "Petrol", amount: 500, date: new Date(2022, 1, 30) },
-    { title: "Udemy course", amount: 490, date: new Date(2022, 2, 1) }
+    { title: "Udemy course", amount: 490, date: new Date(2022, 2, 1) },
   ];
+
+  const addExpenseHandler = (data)=>{
+    expenses.push(data);
+    console.log(expenses);
+   
+  }
+  
+
   return (
     <div>
       <h1>Expense App</h1>
-      <NewExpense></NewExpense>
-      <Expense expense = {expenses}></Expense>
+      <NewExpense onAddExpense = {addExpenseHandler}/>
+      <Expense expense={expenses}></Expense>
       {/* <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
