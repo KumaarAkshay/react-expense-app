@@ -4,6 +4,7 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 function ExpenseItem(props){
+    console.log(props.title,props.date,props.amount);
     const [title,setTitle] = useState(props.title);
     const clickHandler = ()=>{
         setTitle("Updated");
