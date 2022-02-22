@@ -10,15 +10,26 @@ function Expense(prop) {
   const filterChangeHandler = (selectedYear) => {
     setFilterYear(selectedYear);
   };
+  const filteredExpense = prop.expense.filter(
+    (expense) => FilterYear == expense.date.getFullYear()
+  );
+
   return (
     <Card className="expenses">
       <ExpenseFilter
         selected={FilterYear}
         onChangeFilter={filterChangeHandler}
       />
-      {prop.expense.map((item) => (
-        <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
-      ))}
+      {filteredExpense.length === 0 && <p>No Expense Found.</p>}
+      {filteredExpense.length > 0 &&
+        filteredExpense.map((item) => (
+          <ExpenseItem
+            key={item.id}
+            title={item.title}
+            amount={item.amount}
+            date={item.date}
+          />
+        ))}
     </Card>
   );
 }

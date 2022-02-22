@@ -3,10 +3,10 @@ import Expense from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
   var expensesDummy = [
-    { title: "Bike Insurance", amount: 234.44, date: new Date(2022, 2, 12) },
-    { title: "  Momos Shop", amount: 500, date: new Date(2022, 1, 12) },
-    { title: "Petrol", amount: 500, date: new Date(2022, 1, 30) },
-    { title: "Udemy course", amount: 490, date: new Date(2022, 2, 1) },
+    { id:"e11" ,title: "Bike Insurance", amount: 234.44, date: new Date(2022, 2, 12) },
+    { id:"e12" ,title: "  Momos Shop", amount: 500, date: new Date(2022, 1, 12) },
+    { id:"e13" ,title: "Petrol", amount: 500, date: new Date(2022, 1, 30) },
+    { id:"e14" ,title: "Udemy course", amount: 490, date: new Date(2022, 2, 1) },
   ];
   const [expenses, setExpenses] = useState(expensesDummy);
 
